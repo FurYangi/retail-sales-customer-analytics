@@ -1,0 +1,19 @@
+# Core data analysis
+pandas==2.2.2
+numpy==1.26.4
+
+# Visualization
+matplotlib==3.8.4
+seaborn==0.13.2
+plotly==5.22.0
+
+# Database connectivity
+SQLAlchemy==2.0.30
+psycopg2-binary==2.9.9
+
+# Notebook environment
+jupyter==1.0.0
+notebook==7.2.0
+
+# Utilities
+openpyxl==3.1.2
