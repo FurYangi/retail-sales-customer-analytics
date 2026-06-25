@@ -2,6 +2,9 @@
 
 End-to-end data analytics project analyzing retail sales and customer behavior using **SQL**, **Python (Pandas)**, and **interactive dashboards** to turn raw transactional data into actionable business insights.
 
+
+End-to-end data analytics project analyzing retail sales and customer behavior using **SQL**, **Python (Pandas)**, and **interactive dashboards** to turn raw transactional data into actionable business insights.
+
 ---
 
 ## Project Overview
@@ -34,17 +37,17 @@ Retail businesses generate huge volumes of transactional data, but value comes f
 ```
 retail-sales-customer-analytics/
 |-- data/
-|   |-- raw/                 # Original source data
-|   |-- processed/          # Cleaned, analysis-ready data
+|   |-- README.md            # Dataset source & setup instructions
+|   |-- raw/                 # Original source data (not committed)
+|   |-- processed/           # Cleaned, analysis-ready data
 |-- notebooks/
-|   |-- 01_data_cleaning.ipynb
-|   |-- 02_exploratory_analysis.ipynb
-|   |-- 03_customer_segmentation.ipynb
+|   |-- 01_data_cleaning_eda.py        # Cleaning + exploratory analysis
+|   |-- 02_customer_segmentation.py    # RFM customer segmentation
 |-- sql/
-|   |-- schema.sql          # Table definitions
-|   |-- analysis_queries.sql
-|-- dashboards/             # Power BI / Tableau files & exports
-|-- reports/                # Summary findings & visuals
+|   |-- schema.sql           # Table definitions
+|   |-- analysis_queries.sql # Business analysis queries
+|-- reports/                 # Generated charts & summary findings
+|-- requirements.txt         # Python dependencies
 |-- README.md
 ```
 
@@ -52,17 +55,17 @@ retail-sales-customer-analytics/
 
 ## Methodology
 
-**1. Data Cleaning & Preparation**
-Handled missing values, removed duplicates, standardized date and currency formats, and engineered features such as order month, revenue per order, and customer tenure.
+**1. Data Cleaning & Preparation** ( `notebooks/01_data_cleaning_eda.py` )
+Handled missing values, removed cancelled orders and duplicates, standardized column names and date formats, and engineered features such as revenue, order month, and day-of-week.
 
 **2. Exploratory Data Analysis (EDA)**
-Analyzed sales trends across time, products, categories, and regions. Identified seasonality patterns and top/bottom performers.
+Analyzed sales trends across time, products, categories, and regions. Identified seasonality patterns and top/bottom performers, with charts saved to `reports/`.
 
-**3. Customer Segmentation**
-Applied RFM analysis (Recency, Frequency, Monetary) to group customers into actionable segments such as Champions, Loyal, At-Risk, and Lost.
+**3. Customer Segmentation** ( `notebooks/02_customer_segmentation.py` )
+Applied RFM analysis (Recency, Frequency, Monetary) using quartile scoring to group customers into actionable segments such as Champions, Loyal, At-Risk, and Lost.
 
-**4. Insight & Reporting**
-Built dashboards and a summary report translating findings into business recommendations.
+**4. SQL Analysis** ( `sql/analysis_queries.sql` )
+Wrote analytical SQL (joins, aggregations, CTEs, and window functions) for KPIs, monthly growth, top products, and RFM segmentation directly in the database.
 
 ---
 
@@ -72,14 +75,14 @@ Built dashboards and a summary report translating findings into business recomme
 - Sales show clear seasonal peaks in Q4, suggesting opportunities for inventory and marketing planning.
 - Certain product categories have high volume but low margin, flagging pricing and bundling opportunities.
 
-*(Insights are illustrative of the analysis framework; see notebooks and reports for detailed, data-driven findings.)*
+*(Insights are illustrative of the analysis framework; see the scripts and reports for detailed, data-driven findings.)*
 
 ---
 
 ## Skills Demonstrated
 
 - Data cleaning and wrangling with Pandas
-- Writing analytical SQL queries (joins, aggregations, window functions)
+- Writing analytical SQL queries (joins, aggregations, CTEs, window functions)
 - Exploratory data analysis and statistical thinking
 - Customer segmentation (RFM analysis)
 - Data visualization and dashboard design
@@ -89,10 +92,22 @@ Built dashboards and a summary report translating findings into business recomme
 
 ## How to Use
 
-1. Clone the repository: `git clone https://github.com/FurYangi/retail-sales-customer-analytics.git`
-2. Install dependencies: `pip install -r requirements.txt`
-3. Explore the notebooks in the `notebooks/` folder in order.
-4. Review SQL queries in the `sql/` folder and dashboards in `dashboards/`.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/FurYangi/retail-sales-customer-analytics.git
+   cd retail-sales-customer-analytics
+   ```
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Download a dataset into `data/raw/` (see `data/README.md` for a recommended public dataset).
+4. Run the analysis scripts:
+   ```bash
+   python notebooks/01_data_cleaning_eda.py
+   python notebooks/02_customer_segmentation.py
+   ```
+5. Explore the SQL queries in `sql/` and the generated charts in `reports/`.
 
 ---
 
