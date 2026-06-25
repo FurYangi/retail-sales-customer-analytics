@@ -2,9 +2,6 @@
 
 End-to-end data analytics project analyzing retail sales and customer behavior using **SQL**, **Python (Pandas)**, and **interactive dashboards** to turn raw transactional data into actionable business insights.
 
-
-End-to-end data analytics project analyzing retail sales and customer behavior using **SQL**, **Python (Pandas)**, and **interactive dashboards** to turn raw transactional data into actionable business insights.
-
 ---
 
 ## Project Overview
